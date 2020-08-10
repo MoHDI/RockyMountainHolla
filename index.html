@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Rocky Mountain Holla!</title>
+  <script type="text/javascript" src="scripts/phaser.min.js"></script>
+    <script type="text/javascript" src="EventDispatcher.js"></script>
+    <script type="text/javascript" src="DeckOfCards.js"></script>
+    <script type="text/javascript" src="Card.js"></script>
+    <script type="text/javascript" src="Player.js"></script>
+    <script type="text/javascript" src="PokerMath.js"></script>
+    <script type="text/javascript" src="GameCounter.js"></script>
+    <script type="text/javascript" src="PopUpTalk.js"></script>
+    <script type="text/javascript" src="WonkHands.js"></script>
+    <script type="text/javascript" src="BetSlip.js"></script>
+    <!-- <script type="text/javascript" src="scripts/gsap-shockingly-green/minified/gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+
+  <script type="text/javascript" src="TitleScene.js"></script>
+    <script type="text/javascript" src="HollaGame.js"></script>
+    <script type="text/javascript" src="PokerTest.js"></script>
+            <script type="text/javascript" src="UIControls.js"></script>
+<!-- 
+          <script type="text/javascript" src="levels/LevelA000.js"></script>
+          <script type="text/javascript" src="levels/LevelA001.js"></script>
+          <script type="text/javascript" src="levels/LevelA002.js"></script>
+    <script type="text/javascript" src="LevelMenu.js"></script>
+    <script type="text/javascript" src="GameHUD.js"></script>
+  <script type="text/javascript" src="PlayScene.js"></script> -->
+
+  <script type="text/javascript" src="game.js"></script>
+<script>
+var isUnlocked = false;
+function unlock() {
+
+	if(isIOS || this.unlocked)
+		return;
+
+	// create empty buffer and play it
+	var buffer = myContext.createBuffer(1, 1, 22050);
+	var source = myContext.createBufferSource();
+	source.buffer = buffer;
+	source.connect(myContext.destination);
+	source.noteOn(0);
+
+	// by checking the play state after some time, we know if we're really unlocked
+	setTimeout(function() {
+		if((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
+			isUnlocked = true;
+		}
+	}, 0);
+
+}
+</script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor="#0xFFFFFF">
+
+</body>
+</html>
